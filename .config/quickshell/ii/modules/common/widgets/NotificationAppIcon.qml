@@ -54,6 +54,9 @@ Rectangle { // App icon
             implicitSize: root.appIconSize
             asynchronous: true
             source: Quickshell.iconPath(root.appIcon, "image-missing")
+        Component.onCompleted: {
+            console.log("Loaded appIcon:", root.appIcon)
+        }
         }
     }
     Loader {
@@ -96,6 +99,9 @@ Rectangle { // App icon
                     implicitSize: root.smallAppIconSize
                     asynchronous: true
                     source: Quickshell.iconPath(root.appIcon, "image-missing")
+                            Component.onCompleted: {
+            console.log("Loaded appIcon:", root.appIcon)
+        }
                 }
             }
         }
