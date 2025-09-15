@@ -33,6 +33,10 @@ MouseArea { // Notification group area
         dragIndexDiff == 1 ? Math.max(0, parentDragDistance * 0.3) :
         dragIndexDiff == 2 ? Math.max(0, parentDragDistance * 0.1) : 0
 
+        Component.onCompleted: {
+            console.log("------ TEST:", JSON.stringify(notificationGroup))
+        }
+
     function destroyWithAnimation() {
         root.qmlParent.resetDrag()
         background.anchors.leftMargin = background.anchors.leftMargin; // Break binding

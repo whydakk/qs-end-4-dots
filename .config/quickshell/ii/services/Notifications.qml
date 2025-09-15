@@ -40,8 +40,21 @@ Singleton {
             }
         }
     }
+    property var substitutions: ({
+        "brave": "brave-browser",
+        "chromium": "chromium"
+    })
+
+    function normalizeIcon(notif) {
+        if (notif.appIcon?.startsWith("file://")) {
+            notif.appIcon = (notif.notification.desktopEntry && notif.notification.desktopEntry !== "")
+                ? notif.notification.desktopEntry
+                : (substitutions[notif.appName] ?? "image-missing");
+        }
+    }
 
     function notifToJSON(notif) {
+        normalizeIcon(notif)
         return {
             "notificationId": notif.notificationId,
             "actions": notif.actions,
@@ -112,6 +125,7 @@ Singleton {
     function groupsForList(list) {
         const groups = {};
         list.forEach((notif) => {
+            normalizeIcon(notif)
             if (!groups[notif.appName]) {
                 groups[notif.appName] = {
                     appName: notif.appName,
@@ -260,6 +274,7 @@ Singleton {
         onLoaded: {
             const fileContents = notifFileView.text()
             root.list = JSON.parse(fileContents).map((notif) => {
+                normalizeIcon(notif)
                 return notifComponent.createObject(root, {
                     "notificationId": notif.notificationId,
                     "actions": [], // Notification actions are meaningless if they're not tracked by the server or the sender is dead
