@@ -172,7 +172,7 @@
         "automaticSuspend": true,
         "critical": 5,
         "low": 20,
-        "suspend": 15
+        "suspend": 30
     },
     "conflictKiller": {
         "autoKillNotificationDaemons": true,
