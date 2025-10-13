@@ -74,37 +74,7 @@
         },
         "quote": "",
         "thumbnailPath": "",
-        "wallpaperPath": "/home/s4bba7/Obrazy/Tapety/abstrakt/pobrane_upscayl_2x_upscayl-standard-4x.png",
-        "wallpaperSafety": {
-            "enable": true,
-            "triggerCondition": {
-                "networkNameKeywords": [
-                    "airport",
-                    "cafe",
-                    "college",
-                    "company",
-                    "eduroam",
-                    "free",
-                    "guest",
-                    "public",
-                    "school",
-                    "university"
-                ],
-                "wallpaperKeywords": [
-                    "anime",
-                    "ecchi",
-                    "hentai",
-                    "yande.re",
-                    "konachan",
-                    "breast",
-                    "nipples",
-                    "pussy",
-                    "nsfw",
-                    "spoiler",
-                    "girl"
-                ]
-            }
-        }
+        "wallpaperPath": "/home/s4bba7/Obrazy/Tapety/abstrakt/pobrane_upscayl_2x_upscayl-standard-4x.png"
     },
     "bar": {
         "autoHide": {
@@ -190,8 +160,10 @@
         ],
         "monochromeIcons": false,
         "pinnedApps": [
-            "org.kde.dolphin",
-            "kitty"
+            "kitty",
+            "caprine",
+            "com.rtosta.zapzap",
+            "org.gnome.nautilus"
         ],
         "pinnedOnStartup": false
     },
@@ -232,7 +204,9 @@
             "radius": 100
         },
         "centerClock": true,
-        "showLockedText": true
+        "launchOnStartup": false,
+        "showLockedText": true,
+        "unlockKeyring": true
     },
     "media": {
         "filterDuplicatePlayers": true
@@ -324,5 +298,48 @@
     "windows": {
         "centerTitle": true,
         "showTitlebar": true
+    },
+    "workSafety": {
+        "enable": {
+            "clipboard": true,
+            "wallpaper": true
+        },
+        "triggerCondition": {
+            "fileKeywords": [
+                "anime",
+                "ecchi",
+                "hentai",
+                "yande.re",
+                "konachan",
+                "breast",
+                "nipples",
+                "pussy",
+                "nsfw",
+                "spoiler",
+                "girl"
+            ],
+            "linkKeywords": [
+                "hentai",
+                "porn",
+                "sukebei",
+                "hitomi.la",
+                "rule34",
+                "gelbooru",
+                "fanbox",
+                "dlsite"
+            ],
+            "networkNameKeywords": [
+                "airport",
+                "cafe",
+                "college",
+                "company",
+                "eduroam",
+                "free",
+                "guest",
+                "public",
+                "school",
+                "university"
+            ]
+        }
     }
 }
